@@ -1,14 +1,11 @@
-ARG CUDA="9.0"
-ARG CUDNN="7"
-
-FROM nvidia/cuda:${CUDA}-cudnn${CUDNN}-devel-ubuntu16.04
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # install basics
 RUN apt-get update -y \
  && apt-get install -y apt-utils git curl ca-certificates bzip2 cmake tree htop bmon iotop g++ \
- && apt-get install -y libglib2.0-0 libsm6 libxext6 libxrender-dev
+ && apt-get install -y libglib2.0-0 libsm6 libxext6 libxrender-dev libxrender1 libxtst6 libxi6 libfreetype6 wget
 
 # Install Miniconda
 RUN curl -so /miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
@@ -32,7 +29,7 @@ RUN conda install -y ipython
 RUN pip install ninja yacs cython matplotlib opencv-python
 
 # Install PyTorch 1.0 Nightly and OpenCV
-RUN conda install -y pytorch-nightly -c pytorch \
+RUN conda install -y pytorch-nightly cudatoolkit=9.0 -c pytorch \
  && conda clean -ya
 
 # Install TorchVision master
@@ -45,9 +42,18 @@ RUN git clone https://github.com/cocodataset/cocoapi.git \
  && cd cocoapi/PythonAPI \
  && python setup.py build_ext install
 
-# install PyTorch Detection
-RUN git clone https://github.com/facebookresearch/maskrcnn-benchmark.git \
- && cd maskrcnn-benchmark \
- && python setup.py build develop
+# Install PyCharm IDE into /opt
+RUN cd /opt \
+    && wget https://download.jetbrains.com/python/pycharm-community-2018.3.4.tar.gz \
+    && tar xvzf pycharm-community-2018.3.4.tar.gz \
+&& rm pycharm-community-2018.3.4.tar.gz
 
-WORKDIR /maskrcnn-benchmark
+# Install Jupyter IDE
+RUN conda install -y jupyter
+
+# install PyTorch Detection
+#RUN git clone https://github.com/facebookresearch/maskrcnn-benchmark.git \
+# && cd maskrcnn-benchmark \
+# && python setup.py build develop
+
+WORKDIR /home
