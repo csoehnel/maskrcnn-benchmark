@@ -31,7 +31,7 @@ MODEL:
     FG_IOU_THRESHOLD: 0.5
     BG_IOU_THRESHOLD: 0.4
 DATASETS:
-  TRAIN: ("bdd100k_coco_train_A_over",)
+  TRAIN: ("coco_2014_train", "coco_2014_valminusminival")
   TEST: ("bdd100k_coco_valid",)
 INPUT:
   MIN_SIZE_TRAIN: (800,)
@@ -41,17 +41,11 @@ INPUT:
 DATALOADER:
   SIZE_DIVISIBILITY: 32
 SOLVER:
-#  Assume 4 gpus
-#  BASE_LR: 0.005
-#  WEIGHT_DECAY: 0.0001
-#  STEPS: (120000, 160000)
-#  MAX_ITER: 180000
-#  IMS_PER_BATCH: 8
-#  csoehnel: 1080Ti (memory as 3 GPUs)
-  BASE_LR: 0.00375
+  # Assume 4 gpus
+  BASE_LR: 0.005
   WEIGHT_DECAY: 0.0001
-  STEPS: (160000, 213333)
-  MAX_ITER: 240000
-  IMS_PER_BATCH: 6
+  STEPS: (120000, 160000)
+  MAX_ITER: 180000
+  IMS_PER_BATCH: 8
 TEST:
   IMS_PER_BATCH: 1

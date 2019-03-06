@@ -103,6 +103,62 @@ class DatasetCatalog(object):
         "cityscapes_fine_instanceonly_seg_test_cocostyle": {
             "img_dir": "cityscapes/images",
             "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_test.json"
+        },
+        "bdd100k_coco_train_A": {
+            "img_dir": "bdd100k_coco/train_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_coco.json",
+        },
+        "bdd100k_coco_train_A_over": {
+            "img_dir": "bdd100k_coco/train_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_over_coco.json",
+        },
+        "bdd100k_coco_train_B": {
+            "img_dir": "bdd100k_coco/train_B",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_coco.json",
+        },
+        "bdd100k_coco_train_B_over": {
+            "img_dir": "bdd100k_coco/train_B",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_over_coco.json",
+        },
+        "bdd100k_coco_train_C": {
+            "img_dir": "bdd100k_coco/train_C",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_C_coco.json",
+        },
+        "bdd100k_coco_train_C_over": {
+            "img_dir": "bdd100k_coco/train_C",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_C_over_coco.json",
+        },
+        "bdd100k_coco_train_dev_A": {
+            "img_dir": "bdd100k_coco/train_dev_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_coco.json",
+        },
+        "bdd100k_coco_train_dev_A_over": {
+            "img_dir": "bdd100k_coco/train_dev_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_over_coco.json",
+        },
+        "bdd100k_coco_train_dev_B": {
+            "img_dir": "bdd100k_coco/train_dev_B",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_B_coco.json",
+        },
+        "bdd100k_coco_train_dev_B_over": {
+            "img_dir": "bdd100k_coco/train_dev_B",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_B_over_coco.json",
+        },
+        "bdd100k_coco_train_dev_C": {
+            "img_dir": "bdd100k_coco/train_dev_C",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_C_coco.json",
+        },
+        "bdd100k_coco_train_dev_C_over": {
+            "img_dir": "bdd100k_coco/train_dev_C",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_C_over_coco.json",
+        },
+        "bdd100k_coco_valid": {
+            "img_dir": "bdd100k_coco/valid",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_valid_coco.json",
+        },
+        "bdd100k_coco_test": {
+            "img_dir": "bdd100k_coco/test",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_test_coco.json",
         }
     }
 
