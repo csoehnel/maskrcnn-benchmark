@@ -112,7 +112,6 @@ def coco_annotations_for_file(df, row_idx):
         df_anno = df_anno.drop(columns = ["poly2d"], axis = 1)
     df_anno = pd.concat([df_anno, df_anno.loc[:, "box2d"].apply(pd.Series)], axis = 1).drop(columns = "box2d")
     df_anno["image_id"] = df_row.loc["id"]
-    df_anno["id"] = df_anno.index
     df_anno["category"] = df_anno["category"].map(dict_bdd2coco)
     df_anno["category_id"] = df_anno["category"].map(dict_coco_catname2coco_catid)
     df_anno["bboxw"] = df_anno["x2"] - df_anno["x1"]
@@ -151,6 +150,7 @@ if __name__ == "__main__":
 
     df_coco_annos = pd.concat([coco_annotations_for_file(df_bdd, i) for i in range(df_bdd.shape[0])], ignore_index = True)
     df_coco_annos = df_coco_annos.reset_index(drop = True)
+    df_coco_annos["id"] = df_coco_annos.index
 
     df_bdd = df_bdd.drop(columns = ["labels"], axis = 1)
 

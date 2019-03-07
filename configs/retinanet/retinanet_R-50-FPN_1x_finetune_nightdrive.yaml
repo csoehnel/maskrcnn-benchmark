@@ -1,6 +1,7 @@
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
   WEIGHT: "catalog://ImageNetPretrained/MSRA/R-50"
+#  WEIGHT: "./train_runs/20190306_RetinaNet_R-50_FPN_1x_vanilla/model_0070000.pth"
   RPN_ONLY: True
   RETINANET_ON: True
   BACKBONE:

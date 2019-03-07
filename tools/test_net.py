@@ -34,7 +34,7 @@ def main():
 #       default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/caffe2/e2e_mask_rcnn_R_50_FPN_1x_caffe2.yaml",
 
 #       default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x.yaml",
-        default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x_finetune_nightdrive.yaml",
+        default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x_finetune_nightdrive.yaml", # 1st run
 #       default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x_test_on_bdd100k_valid.yaml",
 
         metavar="FILE",

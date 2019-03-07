@@ -1,0 +1,13 @@
+#!/bin/bash
+
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_valid.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_valid_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_test.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_test_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_over_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B_over_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C_over_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_A.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_A_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_B.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_B_coco.json &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_C.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_C_coco.json &

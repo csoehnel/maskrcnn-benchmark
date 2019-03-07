@@ -1,6 +1,6 @@
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
-  WEIGHT: "./trained_model/model_0120000.pth"
+  WEIGHT: "./pretrained_model/faster_rcnn_R-50-FPN-1x_detectron_no_last_layers.pth"
   BACKBONE:
     CONV_BODY: "R-50-FPN"
   RESNETS:
@@ -21,16 +21,16 @@ MODEL:
     FEATURE_EXTRACTOR: "FPN2MLPFeatureExtractor"
     PREDICTOR: "FPNPredictor"
 DATASETS:
-  TRAIN: ("coco_2014_train", "coco_2014_valminusminival")
-  TEST: ("coco_2014_minival",)
+  TRAIN: ("bdd100k_coco_train_A_over",)
+  TEST: ("bdd100k_coco_valid",)
 DATALOADER:
   SIZE_DIVISIBILITY: 32
 SOLVER:
-  BASE_LR: 0.0025
+#  csoehnel: 1080Ti (memory as 3 GPUs)
+  BASE_LR: 0.00375
   WEIGHT_DECAY: 0.0001
-  STEPS: (480000, 640000)
-  MAX_ITER: 720000
-  IMS_PER_BATCH: 2
+  STEPS: (160000, 213333)
+  MAX_ITER: 240000
+  IMS_PER_BATCH: 6
 TEST:
   IMS_PER_BATCH: 1
-
