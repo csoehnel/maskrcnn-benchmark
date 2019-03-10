@@ -133,14 +133,25 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--bdd100kjson", dest = "bdd100kjson", help = "path to input bdd100k json")
     parser.add_argument("--cocojson", dest="cocojson", help="path to output coco json")
+    parser.add_argument("--timeofday", dest="timeofday", default=None, help="only convert for 'daytime' or 'night' images")
     args = parser.parse_args()
     path_to_bdd_json = args.bdd100kjson
     path_to_coco_json = args.cocojson
+    timeofday = args.timeofday
 
     df_coco = pd.DataFrame(coco_categories)
     dict_coco_catname2coco_catid = pd.Series(df_coco["id"].values, index = df_coco["name"]).to_dict()
 
     df_bdd = pd.read_json(path_to_bdd_json)
+
+    if timeofday is not None:
+        print(f"Filtering samples on timeofday = {timeofday}.")
+        df_bdd["timeofday"] = df_bdd["attributes"].apply(lambda x: x["timeofday"])
+        if timeofday == "daytime":
+            df_bdd = df_bdd.loc[df_bdd.timeofday == "daytime"]
+        elif timeofday == "night":
+            df_bdd = df_bdd.loc[df_bdd.timeofday == "night"]
+        df_bdd = df_bdd.drop(columns=["timeofday"])
 
     df_bdd = df_bdd.drop(columns = ["attributes", "timestamp"])
     df_bdd = df_bdd.rename(columns = {"name": "file_name"}).reset_index(drop = True)

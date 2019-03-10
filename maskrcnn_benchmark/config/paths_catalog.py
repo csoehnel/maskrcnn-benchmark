@@ -156,9 +156,25 @@ class DatasetCatalog(object):
             "img_dir": "bdd100k_coco/valid",
             "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_valid_coco.json",
         },
+        "bdd100k_coco_valid_day": {
+            "img_dir": "bdd100k_coco/valid",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_valid_day_coco.json",
+        },
+        "bdd100k_coco_valid_night": {
+            "img_dir": "bdd100k_coco/valid",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_valid_night_coco.json",
+        },
         "bdd100k_coco_test": {
             "img_dir": "bdd100k_coco/test",
             "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_test_coco.json",
+        },
+        "bdd100k_coco_test_day": {
+            "img_dir": "bdd100k_coco/test",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_test_day_coco.json",
+        },
+        "bdd100k_coco_test_night": {
+            "img_dir": "bdd100k_coco/test",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_test_night_coco.json",
         }
     }
 
