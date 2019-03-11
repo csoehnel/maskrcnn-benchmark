@@ -1,7 +1,6 @@
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
   WEIGHT: "catalog://ImageNetPretrained/MSRA/R-50"
-#  WEIGHT: "./train_runs/20190306_RetinaNet_R-50_FPN_1x_vanilla/model_0070000.pth"
   RPN_ONLY: True
   RETINANET_ON: True
   BACKBONE:
@@ -56,3 +55,5 @@ SOLVER:
   IMS_PER_BATCH: 6
 TEST:
   IMS_PER_BATCH: 1
+#  CAT_ID_FILTER: [1, 2, 3, 4, 6, 7, 8, 10, 13]
+  CAT_ID_FILTER: [1, 3, 10, 13]

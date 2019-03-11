@@ -420,4 +420,7 @@ _C.TEST.DETECTIONS_PER_IMG = 100
 # ---------------------------------------------------------------------------- #
 _C.OUTPUT_DIR = "."
 
+# csoehnel: for evaluation based on specific category_ids
+_C.TEST.CAT_ID_FILTER = []
+
 _C.PATHS_CATALOG = os.path.join(os.path.dirname(__file__), "paths_catalog.py")

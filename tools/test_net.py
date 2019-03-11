@@ -34,7 +34,7 @@ def main():
 #       default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/caffe2/e2e_mask_rcnn_R_50_FPN_1x_caffe2.yaml",
 
 #       default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x.yaml",
-        default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x_finetune_nightdrive.yaml", # 1st run
+        default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x_finetune_nightdrive.yaml",
 #       default="/home/SharedFolder/git/csoehnel/maskrcnn-benchmark/configs/retinanet/retinanet_R-50-FPN_1x_test_on_bdd100k_valid.yaml",
 
         metavar="FILE",
@@ -93,7 +93,8 @@ def main():
             output_folders[idx] = output_folder
     data_loaders_val = make_data_loader(cfg, is_train=False, is_distributed=distributed)
     for output_folder, dataset_name, data_loader_val in zip(output_folders, dataset_names, data_loaders_val):
-        inference(
+        # csoehnel: added return values for logging the stats
+        _, _, stats = inference(
             model,
             data_loader_val,
             dataset_name=dataset_name,
@@ -103,7 +104,14 @@ def main():
             expected_results=cfg.TEST.EXPECTED_RESULTS,
             expected_results_sigma_tol=cfg.TEST.EXPECTED_RESULTS_SIGMA_TOL,
             output_folder=output_folder,
+            catIds=cfg.TEST.CAT_ID_FILTER # csoehnel: for evaluation based on specific category_ids
         )
+        # csoehnel: logging the stats
+        with open(str(dataset_name) + "_" + str(cfg.MODEL.WEIGHT).split(os.sep)[-1].split(".")[0] + "_" + "-".join(str(c) for c in cfg.TEST.CAT_ID_FILTER) + ".txt", "a+") as f:
+            f.write("AP,AP50,AP75,APs,APm,APl,AR@1,AR@10,AR,ARs,ARm,ARl,\n")
+            for s in stats:
+                f.write(f"{s},")
+
         synchronize()
 
 

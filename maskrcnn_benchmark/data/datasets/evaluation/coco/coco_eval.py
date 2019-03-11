@@ -18,6 +18,7 @@ def do_coco_evaluation(
     iou_types,
     expected_results,
     expected_results_sigma_tol,
+    catIds # csoehnel: for evaluation based on specific category_ids
 ):
     logger = logging.getLogger("maskrcnn_benchmark.inference")
 
@@ -57,14 +58,15 @@ def do_coco_evaluation(
             if output_folder:
                 file_path = os.path.join(output_folder, iou_type + ".json")
             res = evaluate_predictions_on_coco(
-                dataset.coco, coco_results[iou_type], file_path, iou_type
+                dataset.coco, coco_results[iou_type], file_path, iou_type,
+                catIds # csoehnel: for evaluation based on specific category_ids
             )
             results.update(res)
     logger.info(results)
     check_expected_results(results, expected_results, expected_results_sigma_tol)
     if output_folder:
         torch.save(results, os.path.join(output_folder, "coco_results.pth"))
-    return results, coco_results
+    return results, coco_results, res.stats # csoehnel: added res.stats for getting ALL the stats
 
 
 def prepare_for_coco_detection(predictions, dataset):
@@ -303,7 +305,8 @@ def evaluate_box_proposals(
 
 
 def evaluate_predictions_on_coco(
-    coco_gt, coco_results, json_result_file, iou_type="bbox"
+    coco_gt, coco_results, json_result_file, iou_type="bbox",
+    catIds = [] # csoehnel: for evaluation based on specific category_ids
 ):
     import json
 
@@ -318,7 +321,10 @@ def evaluate_predictions_on_coco(
     # coco_dt = coco_gt.loadRes(coco_results)
     coco_eval = COCOeval(coco_gt, coco_dt, iou_type)
 
-    coco_eval.params.catIds = [1, 2, 3, 4, 6, 7, 8, 10, 13] ## csoehnel: specify category_ids for evaluation
+    # csoehnel: for evaluation based on specific category_ids
+    if len(catIds) > 0:
+        print(f"Using category_ids = {catIds}")
+        coco_eval.params.catIds = catIds
 
     coco_eval.evaluate()
     coco_eval.accumulate()

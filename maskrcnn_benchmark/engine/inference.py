@@ -61,6 +61,7 @@ def inference(
         expected_results=(),
         expected_results_sigma_tol=4,
         output_folder=None,
+        catIds=[] # csoehnel: for evaluation based on specific category_ids
 ):
     # convert to a torch.device for efficiency
     device = torch.device(device)
@@ -96,6 +97,8 @@ def inference(
         iou_types=iou_types,
         expected_results=expected_results,
         expected_results_sigma_tol=expected_results_sigma_tol,
+        # csoehnel: for evaluation based on specific category_ids
+        catIds=catIds
     )
 
     return evaluate(dataset=dataset,
