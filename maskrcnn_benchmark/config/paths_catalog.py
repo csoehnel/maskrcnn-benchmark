@@ -128,6 +128,30 @@ class DatasetCatalog(object):
             "img_dir": "bdd100k_coco/train_C",
             "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_C_over_coco.json",
         },
+        "bdd100k_coco_train_A_2000": {
+            "img_dir": "bdd100k_coco/train_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_2000_coco.json",
+        },
+        "bdd100k_coco_train_A_over_2000": {
+            "img_dir": "bdd100k_coco/train_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_over_2000_coco.json",
+        },
+        "bdd100k_coco_train_B_2000": {
+            "img_dir": "bdd100k_coco/train_B",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_2000_coco.json",
+        },
+        "bdd100k_coco_train_B_over_2000": {
+            "img_dir": "bdd100k_coco/train_B",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_over_2000_coco.json",
+        },
+        "bdd100k_coco_train_C_2000": {
+            "img_dir": "bdd100k_coco/train_C",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_C_2000_coco.json",
+        },
+        "bdd100k_coco_train_C_over_2000": {
+            "img_dir": "bdd100k_coco/train_C",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_C_over_2000_coco.json",
+        },
         "bdd100k_coco_train_dev_A": {
             "img_dir": "bdd100k_coco/train_dev_A",
             "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_coco.json",

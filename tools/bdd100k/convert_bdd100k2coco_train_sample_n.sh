@@ -1,0 +1,8 @@
+#!/bin/bash
+
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_2000_coco.json --numframes 2000 &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_over_2000_coco.json --numframes 2000 &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B_2000_coco.json --numframes 2000 &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_B_over_2000_coco.json --numframes 2000 &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C_2000_coco.json --numframes 2000 &
+python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_C_over_2000_coco.json --numframes 2000 &
