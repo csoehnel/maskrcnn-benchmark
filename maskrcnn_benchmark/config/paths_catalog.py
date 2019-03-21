@@ -199,6 +199,78 @@ class DatasetCatalog(object):
         "bdd100k_coco_test_night": {
             "img_dir": "bdd100k_coco/test",
             "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_test_night_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_025": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_025_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_B_ganaug_025": {
+            "img_dir": "bdd100k_coco_v032_e14/train_B_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_ganaug_025_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_050": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_050",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_050_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_025_over": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_025_over_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_B_ganaug_025_over": {
+            "img_dir": "bdd100k_coco_v032_e14/train_B_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_ganaug_025_over_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_050_over": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_050",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_025_2000": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_025_2000_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_B_ganaug_025_2000": {
+            "img_dir": "bdd100k_coco_v032_e14/train_B_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_ganaug_025_2000_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_050_2000": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_050",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_050_2000_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_025_over_2000": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_025_over_2000_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_B_ganaug_025_over_2000": {
+            "img_dir": "bdd100k_coco_v032_e14/train_B_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_B_ganaug_025_over_2000_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_A_ganaug_050_over_2000": {
+            "img_dir": "bdd100k_coco_v032_e14/train_A_ganaug_050",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_2000_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_dev_A_ganaug_025": {
+            "img_dir": "bdd100k_coco_v032_e14/train_dev_A_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_025_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_dev_B_ganaug_025": {
+            "img_dir": "bdd100k_coco_v032_e14/train_dev_B_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_B_ganaug_025_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_dev_A_ganaug_050": {
+            "img_dir": "bdd100k_coco_v032_e14/train_dev_A_ganaug_050",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_dev_A_ganaug_025_over": {
+            "img_dir": "bdd100k_coco_v032_e14/train_dev_A_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_025_over_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_dev_B_ganaug_025_over": {
+            "img_dir": "bdd100k_coco_v032_e14/train_dev_B_ganaug_025",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_B_ganaug_025_over_coco.json",
+        },
+        "bdd100k_coco_v032_e14_train_dev_A_ganaug_050_over": {
+            "img_dir": "bdd100k_coco_v032_e14/train_dev_A_ganaug_050",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_coco.json",
         }
     }
 
