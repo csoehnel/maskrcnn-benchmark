@@ -271,6 +271,23 @@ class DatasetCatalog(object):
         "bdd100k_coco_v032_e14_train_dev_A_ganaug_050_over": {
             "img_dir": "bdd100k_coco_v032_e14/train_dev_A_ganaug_050",
             "ann_file": "bdd100k_coco_v032_e14/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_coco.json",
+        },
+        "bdd100k_coco_train_A_ganaug_050_over_baseonly": {
+            "img_dir": "bdd100k_coco/train_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_baseonly_coco.json",
+        },
+        "bdd100k_coco_train_A_ganaug_050_over_augonlyasbase": {
+            "img_dir": "bdd100k_coco/train_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_augonlyasbase_coco.json",
+        }
+
+        "bdd100k_coco_train_dev_A_ganaug_050_over_baseonly": {
+            "img_dir": "bdd100k_coco/train_dev_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_baseonly_coco.json",
+        },
+        "bdd100k_coco_train_dev_A_ganaug_050_over_augonlyasbase": {
+            "img_dir": "bdd100k_coco/train_dev_A",
+            "ann_file": "bdd100k_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_augonlyasbase_coco.json",
         }
     }
 

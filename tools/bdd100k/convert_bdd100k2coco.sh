@@ -59,3 +59,11 @@
 #python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_augmented_v032_e14/annotations/bdd100k_sorted_train_dev_A_ganaug_025_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_augmented_v032_e14/annotations/bdd100k_sorted_train_dev_A_ganaug_025_over_coco.json &
 #python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_augmented_v032_e14/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_augmented_v032_e14/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_coco.json &
 #python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_augmented_v032_e14/annotations/bdd100k_sorted_train_dev_B_ganaug_025_over.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_augmented_v032_e14/annotations/bdd100k_sorted_train_dev_B_ganaug_025_over_coco.json &
+
+## additional train-A run "augonlyasbase"
+#python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_augonlyasbase.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_augonlyasbase_coco.json &
+#python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_augonlyasbase.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_augonlyasbase_coco.json &
+
+## additional train-A run "baseonly"
+#python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_baseonly.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_A_ganaug_050_over_baseonly_coco.json &
+#python convert_bdd100k2coco.py --bdd100kjson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_baseonly.json --cocojson ../../../../../CurrentDatasets/bdd100k_sorted_coco/annotations/bdd100k_sorted_train_dev_A_ganaug_050_over_baseonly_coco.json &

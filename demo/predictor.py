@@ -26,7 +26,7 @@ class COCODemo(object):
         "boat",
         "traffic light",
         "fire hydrant",
-        "stop sign",
+        "sign", #"stop sign",
         "parking meter",
         "bench",
         "bird",
@@ -159,7 +159,7 @@ class COCODemo(object):
         )
         return transform
 
-    def run_on_opencv_image(self, image):
+    def run_on_opencv_image(self, image, line_width = 1):
         """
         Arguments:
             image (np.ndarray): an image as returned by OpenCV
@@ -175,12 +175,12 @@ class COCODemo(object):
         result = image.copy()
         if self.show_mask_heatmaps:
             return self.create_mask_montage(result, top_predictions)
-        result = self.overlay_boxes(result, top_predictions)
+        result = self.overlay_boxes(result, top_predictions, line_width)
         if self.cfg.MODEL.MASK_ON:
             result = self.overlay_mask(result, top_predictions)
         if self.cfg.MODEL.KEYPOINT_ON:
             result = self.overlay_keypoints(result, top_predictions)
-        result = self.overlay_class_names(result, top_predictions)
+        result = self.overlay_class_names(result, top_predictions, line_width - 1)
 
         return result
 
@@ -250,7 +250,7 @@ class COCODemo(object):
         colors = (colors % 255).numpy().astype("uint8")
         return colors
 
-    def overlay_boxes(self, image, predictions):
+    def overlay_boxes(self, image, predictions, line_width = 1):
         """
         Adds the predicted boxes on top of the image
 
@@ -268,7 +268,7 @@ class COCODemo(object):
             box = box.to(torch.int64)
             top_left, bottom_right = box[:2].tolist(), box[2:].tolist()
             image = cv2.rectangle(
-                image, tuple(top_left), tuple(bottom_right), tuple(color), 1
+                image, tuple(top_left), tuple(bottom_right), tuple(color), line_width
             )
 
         return image
@@ -344,7 +344,7 @@ class COCODemo(object):
                 result[start_y:end_y, start_x:end_x] = masks[y, x]
         return cv2.applyColorMap(result.numpy(), cv2.COLORMAP_JET)
 
-    def overlay_class_names(self, image, predictions):
+    def overlay_class_names(self, image, predictions, line_width = 1):
         """
         Adds detected class names and scores in the positions defined by the
         top-left corner of the predicted bounding box
@@ -364,7 +364,7 @@ class COCODemo(object):
             x, y = box[:2]
             s = template.format(label, score)
             cv2.putText(
-                image, s, (x, y), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 1
+                image, s, (x, y), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), line_width
             )
 
         return image
